@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" output="classes" path="src"/>
-	<classpathentry kind="var" path="JRE_LIB" rootpath="JRE_SRCROOT" sourcepath="JRE_SRC"/>
+	<classpathentry kind="src" path="src/jcat"/>
+	<classpathentry kind="src" path="src/unittests/src"/>
+	<classpathentry kind="src" path="src/njiax"/>
+	<classpathentry kind="src" path="src/gjtapi/net"/>
+	<classpathentry kind="src" path="src/media1.3Override"/>
+	<classpathentry kind="src" path="webServiceBridge/src"/>
+	<classpathentry kind="var" path="JRE_LIB" sourcepath="JRE_SRC"/>
 	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/JainSipApi1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/Stun4J.jar"/>
 	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/asterisk-java-0.2-rc1.jar"/>
