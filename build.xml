@@ -1,0 +1,111 @@
+<project name="GJTAPI" default="build" basedir=".">
+
+    <description>
+
+        Ant build file for the GJTAPI project
+
+    </description>
+
+    <!-- set global properties for this build -->
+
+    <property name="src" location="src"/>
+    <property name="resources" location="resources"/>
+    <property name="classes" location="classes"/>
+    <property name="build" location="build"/>
+    <property name="dist" location="dist"/>
+
+    <property name="gjtapi-src" location="${src}/media1.3Override"/>
+    <property name="media1.3Override-src" location="${src}/media1.3Override"/>
+    <property name="njiax-src" location="${src}/njiax"/>
+    <property name="jcat-src" location="${src}/jcat"/>
+    <property name="unittests-src" location="${src}/unittests"/>
+
+    <!-- version -->
+    <property name="baseVersion" value="1.10"/>
+    <property name="releaseCandidate" value="-rc1"/>
+    <property name="version" value="${baseVersion}${releaseCandidate}"/>
+
+    <!-- licence file -->
+    <property name="licenceFile" value="license.txt"/>
+    <property name="releaseNotes" value="GJTAPI_${baseVersion}_Release_Notes.html"/>
+
+    <property name="compile.debug" value="true"/>
+
+
+    <!-- Edit this with your jtapi and jcc jar locations... -->
+
+    <path id="classpath">
+        <fileset dir="redistrib">
+            <include name="jcc-1.1.jar"/>
+            <include name="jtapi-1.3.1.jar"/>
+            <include name="jcat-0.3.1.jar"/>
+            <include name="JainSipApi1.1.jar"/>
+            <include name="Stun4J.jar"/>
+            <include name="log4j-1.2.16.jar"/>
+            <include name="nist-sdp-1.0.jar"/>
+            <include name="nist-sip-1.2.jar"/>
+            <include name="asterisk-java-0.2-rc1.jar"/>
+            <!-- Generic version. May want to replace with a platform-specific version -->
+            <include name="comm-2.0.3.jar"/>
+            <!-- These are platform dependent. Do not redistribute -->
+            <include name="jmf.jar"/>
+            <!-- XTAPI support -->
+            <include name="xtapi.jar"/>
+            <include name="mstapisp.jar"/>
+            <!-- MjSip support Get it from: http://www.mjsip.org -->
+            <include name="sip.jar"/>
+            <include name="ua.jar"/>
+            <!-- njIAX support Get it from: http://code.google.com/p/njiax/ -->
+            <include name="njiax.jar"/>
+            <include name="junit-4.8.2.jar"/>
+        </fileset>
+    </path>
+
+
+    <!-- jaxws stuff -->
+    <property name="jaxws.lib" location="../3rdparty/jaxws-ri-2.3.1"/>
+    <path id="jaxws.classpath">
+        <fileset dir="${jaxws.lib}">
+            <include name="**/*.jar"/>
+        </fileset>
+        <pathelement location="${java.home}/../lib/tools.jar"/>
+    </path>
+    <taskdef name="apt" classname="com.sun.tools.ws.ant.Apt" classpathref="jaxws.classpath"/>
+    <taskdef name="wsgen" classname="com.sun.tools.ws.ant.WsGen" classpathref="jaxws.classpath"/>
+    <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport" classpathref="jaxws.classpath"/>
+
+    <target name="clean" description="clean up">
+        <!-- Delete the ${build} and ${dist} directory trees -->
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+    </target>
+
+
+    <target name="init">
+        <!-- Create the time stamp -->
+        <tstamp/>
+        <!-- Create the build directory structure used by compile -->
+        <mkdir dir="${classes}"/>
+        <mkdir dir="${build}"/>
+        <mkdir dir="${dist}"/>
+    </target>
+
+
+    <target name="compile" depends="init" description="compile the source ">
+        <!-- Compile the java code from ${src} into ${build} -->
+        <javac encoding="utf-8" destdir="${classes}" debug="${compile.debug}" includeantruntime="false">
+            <src path="${src}"/>
+            <classpath refid="classpath"/>
+        </javac>
+    </target>
+
+    <target name="build" depends="compile" description="build jar file">
+        <jar jarfile="${build}/lib/gjtapi-${version}.jar">
+            <zipfileset dir="${classes}" defaultexcludes="yes">
+                <include name="net/sourceforge/gjtapi/**"/>
+            </zipfileset>
+            <zipfileset dir="${resources}" defaultexcludes="yes"/>
+        </jar>
+    </target>
+
+</project>
