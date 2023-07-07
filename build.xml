@@ -63,7 +63,7 @@
 
 
     <!-- jaxws stuff -->
-    <property name="jaxws.lib" location="../3rdparty/jaxws-ri-2.3.1"/>
+    <property name="jaxws.lib" location="3rdparty/jaxws-ri-2.3.1"/>
     <path id="jaxws.classpath">
         <fileset dir="${jaxws.lib}">
             <include name="**/*.jar"/>
