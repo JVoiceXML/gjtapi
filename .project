@@ -14,16 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>classes</name>
-			<type>2</type>
-			<location>C:/Users/dirks/Development/gjtapi/trunk/main/classes</location>
-		</link>
-		<link>
-			<name>src</name>
-			<type>2</type>
-			<location>C:/Users/dirks/Development/gjtapi/trunk/main/src</location>
-		</link>
-	</linkedResources>
 </projectDescription>

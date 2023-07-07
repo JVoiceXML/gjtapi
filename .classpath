@@ -5,21 +5,21 @@
 	<classpathentry kind="src" path="src/njiax"/>
 	<classpathentry kind="src" path="src/media1.3Override"/>
 	<classpathentry kind="var" path="JRE_LIB" sourcepath="JRE_SRC"/>
-	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/JainSipApi1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/Stun4J.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/asterisk-java-0.2-rc1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/comm-2.0.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/jcat-0.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/jcc-1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/jmf.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/jtapi-1.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/junit-4.8.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/log4j-1.2.16.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/mstapisp.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/nist-sdp-1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/nist-sip-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/sip.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/ua.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dirks/Development/gjtapi/trunk/main/redistrib/xtapi.jar"/>
+	<classpathentry kind="lib" path="redistrib/JainSipApi1.1.jar"/>
+	<classpathentry kind="lib" path="redistrib/Stun4J.jar"/>
+	<classpathentry kind="lib" path="redistrib/asterisk-java-0.2-rc1.jar"/>
+	<classpathentry kind="lib" path="redistrib/comm-2.0.3.jar"/>
+	<classpathentry kind="lib" path="redistrib/jcat-0.3.1.jar"/>
+	<classpathentry kind="lib" path="redistrib/jcc-1.1.jar"/>
+	<classpathentry kind="lib" path="redistrib/jmf.jar"/>
+	<classpathentry kind="lib" path="redistrib/jtapi-1.3.1.jar"/>
+	<classpathentry kind="lib" path="redistrib/junit-4.8.2.jar"/>
+	<classpathentry kind="lib" path="redistrib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="redistrib/mstapisp.jar"/>
+	<classpathentry kind="lib" path="redistrib/nist-sdp-1.0.jar"/>
+	<classpathentry kind="lib" path="redistrib/nist-sip-1.2.jar"/>
+	<classpathentry kind="lib" path="redistrib/sip.jar"/>
+	<classpathentry kind="lib" path="redistrib/ua.jar"/>
+	<classpathentry kind="lib" path="redistrib/xtapi.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
