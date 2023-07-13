@@ -275,7 +275,11 @@ private void loadResources() {
 	// an exception.
 	Properties props = new Properties();
 	try {
-		props.load(this.findResource(GenericJtapiPeer.RESOURCE_NAME));
+		InputStream in = this.findResource(GenericJtapiPeer.RESOURCE_NAME); 
+		if (in == null) {
+			return;
+		}
+		props.load(in);
 		this.setProperties(props);
 	} catch (IOException ioe) {
 		// don't set properties then...
