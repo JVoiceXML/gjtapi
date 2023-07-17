@@ -168,7 +168,11 @@ public void loadCapabilities(String resName) {
 	try {
 		String resourceDir = System.getProperty(GenericJtapiPeer.RESOURCE_DIR, "/");
 		String resource = resourceDir + '/' + resName;
-		props.load( Thread.currentThread().getContextClassLoader().getResourceAsStream(resource));
+		InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream(resource);
+		if (in == null) {
+			return;
+		}
+		props.load(in);
 		this.setCapabilities(props);
 	} catch (IOException ioe) {
 		// don't set capabilities then...
