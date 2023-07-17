@@ -1,5 +1,6 @@
 package net.sourceforge.gjtapi.raw.mjsip;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -73,7 +74,7 @@ public class MjSipProvider implements MediaTpi {
         String strPhone = (String) props.get("gjtapi.mjsip.ua");
         if (strPhone == null) {
             String resource = System.getProperty("gjtapi.sip.properties",
-                "/MjSip.props");
+                "/MjSip.properties");
             InputStream in = null;
             try {
                 in = MjSipProvider.class.getResourceAsStream(
@@ -101,7 +102,9 @@ public class MjSipProvider implements MediaTpi {
             for (int i=0; i<phones.length; i++) {
                 try {
                     String phone = phones[i];
-                    UA ua = new UA(phone, this);
+                    File file = new File(phone);
+                    String phoneConfiguration = file.getCanonicalPath();
+                    UA ua = new UA(phoneConfiguration, this);
                     loadedUAs.put(ua.getAddress(), ua);
                     LOGGER.info("MjSipProvider initialize UA: "
                             + ua.getAddress());
